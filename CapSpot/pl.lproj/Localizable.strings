@@ -1,0 +1,14 @@
+"Free parking" = "Wolnych miejsc";
+"spots" = "parkingowych";
+"Last update" = "Ostatnia aktualizacja";
+"Allow notifications" = "Pozwalaj na powiadomienia";
+"Automatic refresh" = "Odświeżaj automatycznie";
+"Refresh dashboard every: %@" = "Odśwież ekran co: %@";
+"Send notification after refresh" = "Wyślij powiadomienie po odświeżeniu";
+"Choose a server you want CapSpot to use as a data source." = "Wybierz jaki serwer chcesz używać jako źródło danych.";
+"Settings" = "Ustawienia";
+"Dashboard" = "Główny panel";
+"Error" = "Błąd";
+"10 seconds" = "10 sekund";
+"30 seconds" = "30 sekund";
+"1 minute" = "1 minutę";

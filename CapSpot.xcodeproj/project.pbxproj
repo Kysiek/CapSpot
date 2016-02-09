@@ -14,9 +14,12 @@
 		112C4DF51C27545800ADA7EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112C4DF41C27545800ADA7EA /* Assets.xcassets */; };
 		112C4DF81C27545800ADA7EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 112C4DF61C27545800ADA7EA /* LaunchScreen.storyboard */; };
 		112E60E01C33F1E4008342F6 /* SettingsViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 112E60DF1C33F1E4008342F6 /* SettingsViewControllerTableViewController.m */; };
+		113199911C69333F003A80DF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 113199931C69333F003A80DF /* Localizable.strings */; };
+		11AA2EB71C63D9EA00896D81 /* ServerSwitcherTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AA2EB61C63D9EA00896D81 /* ServerSwitcherTableTableViewController.m */; };
 		11BC1EA51C31BD3A007CEE6D /* DashboardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BC1EA41C31BD3A007CEE6D /* DashboardModel.m */; };
 		11BC1EA91C31CB8F007CEE6D /* CapSpotService.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BC1EA81C31CB8F007CEE6D /* CapSpotService.m */; };
 		11DFAE321C35218E00E85D14 /* TimerService.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DFAE311C35218E00E85D14 /* TimerService.m */; };
+		11F07A101C6A77C800741342 /* ErrorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F07A0F1C6A77C800741342 /* ErrorManager.m */; };
 		5F805DFAC645B596DFA4349C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE4578E26A2219810DE5EF2 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -33,12 +36,20 @@
 		112C4DF91C27545800ADA7EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		112E60DE1C33F1E4008342F6 /* SettingsViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewControllerTableViewController.h; sourceTree = "<group>"; };
 		112E60DF1C33F1E4008342F6 /* SettingsViewControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewControllerTableViewController.m; sourceTree = "<group>"; };
+		1131998F1C6932C1003A80DF /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Main.strings; sourceTree = "<group>"; };
+		113199901C6932C1003A80DF /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		113199921C69333F003A80DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		113199941C69336C003A80DF /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		11AA2EB51C63D9EA00896D81 /* ServerSwitcherTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerSwitcherTableTableViewController.h; sourceTree = "<group>"; };
+		11AA2EB61C63D9EA00896D81 /* ServerSwitcherTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerSwitcherTableTableViewController.m; sourceTree = "<group>"; };
 		11BC1EA31C31BD3A007CEE6D /* DashboardModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardModel.h; sourceTree = "<group>"; };
 		11BC1EA41C31BD3A007CEE6D /* DashboardModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardModel.m; sourceTree = "<group>"; };
 		11BC1EA71C31CB8F007CEE6D /* CapSpotService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapSpotService.h; sourceTree = "<group>"; };
 		11BC1EA81C31CB8F007CEE6D /* CapSpotService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapSpotService.m; sourceTree = "<group>"; };
 		11DFAE301C35218E00E85D14 /* TimerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerService.h; sourceTree = "<group>"; };
 		11DFAE311C35218E00E85D14 /* TimerService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerService.m; sourceTree = "<group>"; };
+		11F07A0E1C6A77C800741342 /* ErrorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorManager.h; sourceTree = "<group>"; };
+		11F07A0F1C6A77C800741342 /* ErrorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorManager.m; sourceTree = "<group>"; };
 		63A1E3FE5FD605E28F27155A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9C6D609097D12BC609A13A2E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FFE4578E26A2219810DE5EF2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +99,7 @@
 				112C4DF61C27545800ADA7EA /* LaunchScreen.storyboard */,
 				112C4DF91C27545800ADA7EA /* Info.plist */,
 				112C4DE81C27545800ADA7EA /* Supporting Files */,
+				113199931C69333F003A80DF /* Localizable.strings */,
 			);
 			path = CapSpot;
 			sourceTree = "<group>";
@@ -123,6 +135,8 @@
 				112C4DEF1C27545800ADA7EA /* MainDashboardViewController.m */,
 				112E60DE1C33F1E4008342F6 /* SettingsViewControllerTableViewController.h */,
 				112E60DF1C33F1E4008342F6 /* SettingsViewControllerTableViewController.m */,
+				11AA2EB51C63D9EA00896D81 /* ServerSwitcherTableTableViewController.h */,
+				11AA2EB61C63D9EA00896D81 /* ServerSwitcherTableTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -142,6 +156,8 @@
 				11BC1EA81C31CB8F007CEE6D /* CapSpotService.m */,
 				11DFAE301C35218E00E85D14 /* TimerService.h */,
 				11DFAE311C35218E00E85D14 /* TimerService.m */,
+				11F07A0E1C6A77C800741342 /* ErrorManager.h */,
+				11F07A0F1C6A77C800741342 /* ErrorManager.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -208,6 +224,7 @@
 			knownRegions = (
 				en,
 				Base,
+				pl,
 			);
 			mainGroup = 112C4DDC1C27545800ADA7EA;
 			productRefGroup = 112C4DE61C27545800ADA7EA /* Products */;
@@ -225,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				112C4DF81C27545800ADA7EA /* LaunchScreen.storyboard in Resources */,
+				113199911C69333F003A80DF /* Localizable.strings in Resources */,
 				112C4DF51C27545800ADA7EA /* Assets.xcassets in Resources */,
 				112C4DF31C27545800ADA7EA /* Main.storyboard in Resources */,
 			);
@@ -287,6 +305,8 @@
 			files = (
 				11BC1EA51C31BD3A007CEE6D /* DashboardModel.m in Sources */,
 				112C4DF01C27545800ADA7EA /* MainDashboardViewController.m in Sources */,
+				11F07A101C6A77C800741342 /* ErrorManager.m in Sources */,
+				11AA2EB71C63D9EA00896D81 /* ServerSwitcherTableTableViewController.m in Sources */,
 				112C4DED1C27545800ADA7EA /* AppDelegate.m in Sources */,
 				112C4DEA1C27545800ADA7EA /* main.m in Sources */,
 				11BC1EA91C31CB8F007CEE6D /* CapSpotService.m in Sources */,
@@ -302,6 +322,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				112C4DF21C27545800ADA7EA /* Base */,
+				1131998F1C6932C1003A80DF /* pl */,
 			);
 			name = Main.storyboard;
 			path = CapSpot;
@@ -311,8 +332,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				112C4DF71C27545800ADA7EA /* Base */,
+				113199901C6932C1003A80DF /* pl */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		113199931C69333F003A80DF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				113199921C69333F003A80DF /* en */,
+				113199941C69336C003A80DF /* pl */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

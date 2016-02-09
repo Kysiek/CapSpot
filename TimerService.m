@@ -23,17 +23,33 @@ static TimerService* timerService;
 + (TimerService*)getInstance {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        timerService = [[TimerService alloc] init];
+        timerService = [[TimerService alloc] initWithObservers];
     });
     return timerService;
 }
 
-- (void)startRepeatingTimerForMinutes:(NSInteger)minutes {
+- (instancetype)initWithObservers {
+    if(self = [super init]) {
+         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNotification:) name:DashbaordModelErrorNotification object:nil];
+    }
+    return self;
+}
+
+#pragma mark - Notifications
+- (void) receivedNotification:(NSNotification *) notification {
+    
+    if ([[notification name] isEqualToString:DashbaordModelErrorNotification]) {
+        [self invalidateRepeatingTimer];
+    }
+}
+
+#pragma mark - methods for timer
+- (void)startRepeatingTimerForSeconds:(NSInteger)seconds {
     if(self.repeatingTimer != nil) {
         [self invalidateRepeatingTimer];
     }
     
-    NSTimer* timer = [NSTimer scheduledTimerWithTimeInterval:minutes
+    NSTimer* timer = [NSTimer scheduledTimerWithTimeInterval:seconds
                                                       target:[CapSpotService getInstance]
                                                     selector:@selector(timerTriggersToUpdateData:)
                                                     userInfo:[self userInfo]

@@ -12,10 +12,15 @@
 extern NSString* const DashbaordModelWillUpdateNotification;
 extern NSString* const DashbaordModelArrivalNotification;
 extern NSString* const DashbaordModelErrorNotification;
+extern NSString* const KeyForErrorInSendingNotification;
+extern NSString* const PROD_SERVER_NAME;
+extern NSString* const DEV_SERVER_NAME;
 
 @interface CapSpotService : NSObject
 @property (nonatomic, strong) DashboardModel* dashboardModel;
 + (CapSpotService*)getInstance;
 - (void)updateFreeParkingSpots;
 - (void)timerTriggersToUpdateData:(NSTimer*)theTimer;
+- (NSString*)getServerString;
+- (void)setServerString:(NSString*)selectedServerString;
 @end

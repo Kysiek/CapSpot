@@ -1,0 +1,49 @@
+
+/* Class = "UILabel"; text = "Automatic refresh"; ObjectID = "4a6-7y-UDw"; */
+"4a6-7y-UDw.text" = "Odświeżaj automatycznie";
+
+/* Class = "UITableViewSection"; footerTitle = "Choose a server you want CapSpot to use as a data source."; ObjectID = "55R-lc-9fX"; */
+"55R-lc-9fX.footerTitle" = "Wybierz jaki serwer chcesz używać jako źródło danych.";
+
+/* Class = "UILabel"; text = "300"; ObjectID = "Avp-kO-wig"; */
+"Avp-kO-wig.text" = "?";
+
+/* Class = "UILabel"; text = "Free parking"; ObjectID = "DxX-Vb-2d9"; */
+"DxX-Vb-2d9.text" = "Wolnych miejsc";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "EdD-g4-cDh"; */
+"EdD-g4-cDh.title" = "Ustawienia";
+
+/* Class = "UITableViewController"; title = "Settings"; ObjectID = "MRk-f1-ntL"; */
+"MRk-f1-ntL.title" = "Ustawienia";
+
+/* Class = "UILabel"; text = "CapSpot Server"; ObjectID = "Nh7-Hl-CoZ"; */
+"Nh7-Hl-CoZ.text" = "CapSpot Serwer";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "PC4-7N-BUL"; */
+"PC4-7N-BUL.title" = "Element";
+
+/* Class = "UILabel"; text = "Last update"; ObjectID = "WhE-J1-dLy"; */
+"WhE-J1-dLy.text" = "Ostatnia aktualizacja";
+
+/* Class = "UILabel"; text = "08:43 15.01.2016"; ObjectID = "a2f-Oi-df1"; */
+"a2f-Oi-df1.text" = "?";
+
+/* Class = "UILabel"; text = "PROD"; ObjectID = "ay4-Xl-aJv"; */
+"ay4-Xl-aJv.text" = "PROD";
+
+/* Class = "UITabBarItem"; title = "Dashboard"; ObjectID = "bYj-sE-BWQ"; */
+"bYj-sE-BWQ.title" = "Główny ekran";
+
+/* Class = "UILabel"; text = "Send notification after refresh"; ObjectID = "dde-fe-tvA"; */
+"dde-fe-tvA.text" = "Wyślij powiadomienie po odświeżeniu";
+
+/* Class = "UILabel"; text = "Allow notifications"; ObjectID = "fTi-Yt-49P"; */
+"fTi-Yt-49P.text" = "Pozwalaj na powiadomienia";
+
+/* Class = "UILabel"; text = "Refresh dashbaord every: 5 minutes"; ObjectID = "utG-ki-lq1"; */
+"utG-ki-lq1.text" = "Odśwież ekran co: 5 minut";
+
+/* Class = "UILabel"; text = "spots"; ObjectID = "vW2-kz-SUS"; */
+"vW2-kz-SUS.text" = "parkingowych";
+

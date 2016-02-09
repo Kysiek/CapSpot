@@ -8,6 +8,7 @@
 
 #import "MainDashboardViewController.h"
 #import "CapSpotService.h"
+#import "ErrorManager.h"
 
 @interface MainDashboardViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *freeSpotsLabel;
@@ -24,14 +25,16 @@ BOOL animating;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.capSpotService = [CapSpotService getInstance];
-
     //At the beginning we have to trigger downloading information about free parking spots
-    [self triggerDownloadingDataIfPossible];
+    
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNotification:) name:DashbaordModelArrivalNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNotification:) name:DashbaordModelWillUpdateNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNotification:) name:DashbaordModelErrorNotification object:nil];
 
+    [self triggerDownloadingDataIfPossible];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,6 +55,12 @@ BOOL animating;
         [self stopSpin];
     } else if ([[notification name] isEqualToString:DashbaordModelWillUpdateNotification]) {
         [self startSpin];
+    } else if ([[notification name] isEqualToString:DashbaordModelErrorNotification]) {
+        [self stopSpin];
+        self.lastUpdateLabel.text = @"?";
+        self.freeSpotsLabel.text = @"?";
+        self.freeSpotsLabel.textColor = [UIColor whiteColor];
+        [self createNotificationAboutError:[[notification userInfo] objectForKey:KeyForErrorInSendingNotification]];
     }
 }
 
@@ -67,10 +76,23 @@ BOOL animating;
 }
 
 - (void)updateFreeSpotsLabel {
-    self.freeSpotsLabel.text = [NSString stringWithFormat:@"%ld",(long)self.capSpotService.dashboardModel.freeSpots];
+    NSInteger freeSpots = self.capSpotService.dashboardModel.freeSpots;
+    self.freeSpotsLabel.text = [NSString stringWithFormat:@"%ld",(long)freeSpots];
+    [self setFreeSpotsLabelColor:freeSpots];
+}
+- (void)setFreeSpotsLabelColor:(NSInteger)freeSpots {
+    UIColor* color;
+    if(freeSpots > 60) {
+        color = [UIColor colorWithRed:99.0/255.0 green:185.0/255.0 blue:0 alpha:1];
+    } else if(freeSpots > 30) {
+        color = [UIColor colorWithRed:204.0/255.0 green:158.0/255.0 blue:0 alpha:1];
+    } else {
+        color = [UIColor colorWithRed:204.0/255.0 green:0 blue:0 alpha:1];
+    }
+    self.freeSpotsLabel.textColor = color;
 }
 - (void)updateLastUpdateLabel {
-    self.lastUpdateLabel.text = [NSString stringWithFormat:@"Last update: %@", [self.capSpotService.dashboardModel getDataString]];
+    self.lastUpdateLabel.text = [self.capSpotService.dashboardModel getDataString];
 }
 
 
@@ -106,5 +128,15 @@ BOOL animating;
     // set the flag to stop spinning after one last 90 degree increment
     animating = NO;
     self.refreshButton.enabled = TRUE;
+}
+
+- (void)createNotificationAboutError:(ErrorManager*)error {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Error",nil)
+                                                                   message:error.message
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 @end

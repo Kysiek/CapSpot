@@ -11,6 +11,6 @@
 @interface TimerService : NSObject
 
 + (TimerService*)getInstance;
-- (void)startRepeatingTimerForMinutes:(NSInteger) minutes;
+- (void)startRepeatingTimerForSeconds:(NSInteger) seconds;
 - (void)invalidateRepeatingTimer;
 @end

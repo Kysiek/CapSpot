@@ -8,12 +8,14 @@
 
 #import "SettingsViewControllerTableViewController.h"
 #import "TimerService.h"
+#import "CapSpotService.h"
 
 @interface SettingsViewControllerTableViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *refreshTimeLabel;
 @property (weak, nonatomic) IBOutlet UITableViewCell *refreshTimePickerCell;
 @property (weak, nonatomic) IBOutlet UIPickerView *refreshTimePickerView;
 @property (nonatomic, strong) NSArray* refreshTimePickerViewElements;
+@property (nonatomic, strong) NSDictionary* refreshTimeMap;
 
 @property (nonatomic) NSInteger selectRefreshTime;
 @property (nonatomic) NSInteger previouslySelectedRefreshTime;
@@ -21,9 +23,12 @@
 
 @implementation SettingsViewControllerTableViewController
 
-static NSString* refreshLabelText = @"Refresh dashbaord every: ";
+static NSInteger const refreshSection = 0;
+static NSInteger const capSpotServerSection = 1;
 static NSInteger const refreshTimePickerIndex = 2;
 static NSInteger const refreshTimeCellIndex = 1;
+static NSInteger const capSpotServerCellIndex = 0;
+static NSInteger const selectedServerLabelTag = 1;
 static CGFloat const refreshTimePickerCellHeight = 164.0f;
 
 BOOL refreshTimePickerIsShowing = NO;
@@ -31,10 +36,22 @@ BOOL automaticRefreshSwitchIsOn = NO;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.refreshTimePickerViewElements = @[@"1 minute", @"3 minutes",@"5 minutes", @"10 minutes", @"20 minutes", @"30 minutes", @"50 minutes", @"60 minutes"];
+    self.refreshTimePickerViewElements = @[@"10 seconds", @"30 seconds", @"1 minute"];
+    self.refreshTimeMap = @{self.refreshTimePickerViewElements[0] : @10,
+                            self.refreshTimePickerViewElements[1]: @30,
+                            self.refreshTimePickerViewElements[2]: @60};
     self.selectRefreshTime = 0;
     self.previouslySelectedRefreshTime = -1;
     [self setupRefreshTimeLabel];
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [self initializeSwitchServerCell];
+}
+
+- (void)initializeSwitchServerCell {
+    UITableViewCell* capSpotServerCell = [[self tableView] cellForRowAtIndexPath:[NSIndexPath indexPathForRow:capSpotServerCellIndex inSection:capSpotServerSection]];
+    UILabel* selectedServerLabel = [capSpotServerCell viewWithTag:selectedServerLabelTag];
+    selectedServerLabel.text = [[CapSpotService getInstance] getServerString];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,7 +76,7 @@ BOOL automaticRefreshSwitchIsOn = NO;
     return self.refreshTimePickerViewElements.count;
 }
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return self.refreshTimePickerViewElements[row];
+    return NSLocalizedString(self.refreshTimePickerViewElements[row], nil);
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
@@ -79,7 +96,7 @@ BOOL automaticRefreshSwitchIsOn = NO;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == refreshTimeCellIndex) {
+    if (indexPath.row == refreshTimeCellIndex && indexPath.section == refreshSection) {
         if(refreshTimePickerIsShowing) {
             [self hideRefreshTimePickerCell];
             if(self.previouslySelectedRefreshTime != self.selectRefreshTime) {
@@ -89,13 +106,15 @@ BOOL automaticRefreshSwitchIsOn = NO;
             [self showRefreshTimePickerCell];
             self.previouslySelectedRefreshTime = self.selectRefreshTime;
         }
+    } else if(indexPath.row == capSpotServerCellIndex && indexPath.section == capSpotServerSection) {
+        [self performSegueWithIdentifier:@"chooseCapSpotServerSeque" sender:self];
     }
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 #pragma mark - private Helpers
 
 - (void)setupRefreshTimeLabel {
-    self.refreshTimeLabel.text = [NSString stringWithFormat:@"%@ %@", refreshLabelText, self.refreshTimePickerViewElements[self.selectRefreshTime]];
+    self.refreshTimeLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Refresh dashboard every: %@", nil), NSLocalizedString(self.refreshTimePickerViewElements[self.selectRefreshTime],nil)];
 }
 - (void)showRefreshTimePickerCell {
     refreshTimePickerIsShowing = YES;
@@ -127,8 +146,7 @@ BOOL automaticRefreshSwitchIsOn = NO;
                      }];
 }
 - (void) startTimer {
-    [[TimerService getInstance] startRepeatingTimerForMinutes:10];
-    NSLog(@"Starting timer for: %ld", (long)self.selectRefreshTime);
+    [[TimerService getInstance] startRepeatingTimerForSeconds:[[self.refreshTimeMap objectForKey:self.refreshTimePickerViewElements[self.selectRefreshTime]] integerValue]];
 }
 - (void) stopTimer {
     [[TimerService getInstance] invalidateRepeatingTimer];
