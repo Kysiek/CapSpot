@@ -5,7 +5,7 @@
 "Automatic refresh" = "Odświeżaj automatycznie";
 "Refresh dashboard every: %@" = "Odśwież ekran co: %@";
 "Send notification after refresh" = "Wyślij powiadomienie po odświeżeniu";
-"Choose a server you want CapSpot to use as a data source." = "Wybierz jaki serwer chcesz używać jako źródło danych.";
+"Choose a server you want CapSpot to use as a data source. If you do not know which one to choose leave it as it is by default - PROD." = "Wybierz jaki serwer ma być używany jako źródło danych w aplikacji CapSpot. Jeżeli nie jesteś pewien(-na) użyj dmyślnego - PROD.";
 "Settings" = "Ustawienia";
 "Dashboard" = "Główny panel";
 "Error" = "Błąd";

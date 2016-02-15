@@ -5,7 +5,7 @@
 "Automatic refresh" = "Automatic refresh";
 "Refresh dashboard every: %@" = "Refresh dashboard every: %@";
 "Send notification after refresh" = "Send notification after refresh";
-"Choose a server you want CapSpot to use as a data source." = "Choose a server you want CapSpot to use as a data source.";
+"Choose a server you want CapSpot to use as a data source. If you do not know which one to choose leave it as it is by default - PROD." = "Choose a server you want CapSpot to use as a data source. If you do not know which one to choose leave it as it is by default - PROD.";
 "Settings" = "Settings";
 "Dashboard" = "Dashboard";
 "Error" = "Error";

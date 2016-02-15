@@ -56,7 +56,26 @@
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
+- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    UIView* sectionFooterView = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width,50)];
+    sectionFooterView.backgroundColor = [UIColor whiteColor];
+    UILabel *footerLabel = [[UILabel alloc] initWithFrame:
+                            CGRectMake(15, 15, sectionFooterView.frame.size.width - 30, 50.0)];
+    footerLabel.backgroundColor = [UIColor whiteColor];
+    [footerLabel setFont:[UIFont fontWithName:@"Verdana" size:12.0]];
+    
+    footerLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    footerLabel.numberOfLines = 0;
+    
+    footerLabel.text = NSLocalizedString(@"Choose a server you want CapSpot to use as a data source. If you do not know which one to choose leave it as it is by default - PROD.",nil);
+    
+    [sectionFooterView addSubview:footerLabel];
+    
+    return sectionFooterView;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 50.0;
+}
 
 #pragma mark - private helpers
 -(void)enableDefaultSelectionForCell: (UITableViewCell*) tableViewCellToSelect andDeselect: (UITableViewCell*) tableViewCellToDeselect {

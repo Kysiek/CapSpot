@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -266,35 +265,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="l1Y-w9-K5q">
-                            <rect key="frame" x="0.0" y="64" width="600" height="88"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CapgeminiLogo" translatesAutoresizingMaskIntoConstraints="NO" id="zc8-pc-9Sj">
-                                    <rect key="frame" x="200" y="20" width="200" height="48"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="zc8-pc-9Sj" secondAttribute="height" multiplier="827:197" id="DoJ-oF-LSg"/>
-                                        <constraint firstAttribute="width" constant="200" id="bbt-KO-F0e">
-                                            <variation key="heightClass=compact-widthClass=compact" constant="250"/>
-                                            <variation key="heightClass=compact-widthClass=regular" constant="300"/>
-                                            <variation key="heightClass=regular-widthClass=regular" constant="400"/>
-                                        </constraint>
-                                    </constraints>
-                                </imageView>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstItem="zc8-pc-9Sj" firstAttribute="centerX" secondItem="l1Y-w9-K5q" secondAttribute="centerX" id="dql-TD-pVx"/>
-                                <constraint firstItem="zc8-pc-9Sj" firstAttribute="top" secondItem="l1Y-w9-K5q" secondAttribute="top" constant="20" id="hcJ-3b-ust">
-                                    <variation key="heightClass=compact-widthClass=compact" constant="10"/>
-                                </constraint>
-                            </constraints>
-                        </view>
                         <sections>
                             <tableViewSection id="uri-ur-tWG">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="dSV-HZ-BBL">
-                                        <rect key="frame" x="0.0" y="152" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="99" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dSV-HZ-BBL" id="iFi-7c-mYS">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -322,7 +297,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="IkD-xd-Qo5">
-                                        <rect key="frame" x="0.0" y="196" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="143" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IkD-xd-Qo5" id="zlb-gv-tDY">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -342,7 +317,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" tag="2" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="67" id="ORX-Ka-tFf">
-                                        <rect key="frame" x="0.0" y="240" width="600" height="67"/>
+                                        <rect key="frame" x="0.0" y="187" width="600" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ORX-Ka-tFf" id="wdR-LV-5gg">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="66.5"/>
@@ -367,7 +342,7 @@
                             <tableViewSection id="p1z-Kz-Te7">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Nh7-Hl-CoZ" detailTextLabel="ay4-Xl-aJv" style="IBUITableViewCellStyleValue1" id="b1T-3S-T1j">
-                                        <rect key="frame" x="0.0" y="343" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="290" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b1T-3S-T1j" id="gmf-Ed-A10">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
@@ -431,7 +406,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CapgeminiLogo" width="413" height="98"/>
         <image name="RefreshIconEmpty" width="100" height="100"/>
         <image name="dashboardTabBar" width="25" height="25"/>
         <image name="refreshSymbol" width="100" height="100"/>

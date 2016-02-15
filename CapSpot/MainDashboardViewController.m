@@ -95,7 +95,6 @@ BOOL animating;
     self.lastUpdateLabel.text = [self.capSpotService.dashboardModel getDataString];
 }
 
-
 - (void) spinWithOptions: (UIViewAnimationOptions) options {
     // this spin completes 360 degrees every 2 seconds
     [UIView animateWithDuration: 0.25f
